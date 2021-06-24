@@ -12,25 +12,41 @@ const Tab = createBottomTabNavigator();
 const BottomTab = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Search"
       tabBarOptions={{
-        activeTintColor: "#283B62",
+        activeTintColor: "black",
       }}
+      sceneContainerStyle={{ justifyContent: "center" }}
     >
       <Tab.Screen
         name="Search"
         component={SearchStack}
         options={{
           tabBarLabel: "Search",
-          tabBarIcon: ({ focused }) => <FontAwesome name="search" />,
+          tabBarIcon: ({ focused, size }) => (
+            <FontAwesome
+              name="search"
+              style={{
+                color: "#0057ad",
+              }}
+              size={20}
+            />
+          ),
         }}
       />
       <Tab.Screen
-        name="Agents"
+        name="Agent"
         component={AgentStack}
         options={{
           tabBarLabel: "Agents",
-          tabBarIcon: ({ focused }) => <FontAwesome name="black-tie" />,
+          tabBarIcon: ({ focused, size }) => (
+            <FontAwesome
+              name="black-tie"
+              style={{
+                color: "#0057ad",
+              }}
+              size={20}
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -38,15 +54,31 @@ const BottomTab = () => {
         component={ChatStack}
         options={{
           tabBarLabel: "Chat",
-          tabBarIcon: ({ focused }) => <Entypo name="chat" />,
+          tabBarIcon: ({ focused, size }) => (
+            <Entypo
+              name="chat"
+              style={{
+                color: "#0057ad",
+              }}
+              size={20}
+            />
+          ),
         }}
       />
       <Tab.Screen
         name="Settings"
         component={SettingStack}
         options={{
-          tabBarLabel: "Settings",
-          tabBarIcon: ({ focused }) => <FontAwesome name="sliders" />,
+          tabBarLabel: "Setting",
+          tabBarIcon: ({ focused, size }) => (
+            <FontAwesome
+              name="sliders"
+              style={{
+                color: "#0057ad",
+              }}
+              size={20}
+            />
+          ),
         }}
       />
     </Tab.Navigator>
