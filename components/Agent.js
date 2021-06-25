@@ -1,5 +1,6 @@
 import * as React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import AgentList from "./shared/AgentList";
 
 const AgentScreen = () => {
@@ -28,13 +29,24 @@ const AgentScreen = () => {
       image: require("../assets/images/agents/agent-3.jpg"),
       phone: "3475104274",
     },
+    {
+      id: "agent-4",
+      name: "Lee Wok",
+      title:
+        "Find your dream home with poolside backyard, multifloor AC units, and much more.",
+      image: require("../assets/images/agents/agent-4.jpg"),
+      phone: "9156895823",
+    },
   ];
 
   return (
-    <View style={styles.view}>
-      <Text style={styles.headers}>Agents Near You</Text>
+    <SafeAreaView style={styles.view}>
+      <Text style={styles.headers}>
+        {agents.length < 100 ? agents.length : "99+"} Agents Near You
+      </Text>
+      <View style={styles.viewHorizontal} />
       <AgentList agents={agents} />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -47,9 +59,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-
+  viewHorizontal: {
+    height: 1,
+    width: Dimensions.get("screen").width * 0.9,
+    marginBottom: 5,
+    backgroundColor: "#0057ad",
+    opacity: 0.5,
+  },
   headers: {
-    marginTop: 10,
+    marginTop: -10,
     fontSize: 20,
     marginBottom: 5,
     color: "#0057ad",

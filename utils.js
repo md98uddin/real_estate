@@ -13,7 +13,16 @@ export const callNumber = (phone) => {
   Linking.canOpenURL(phoneNumber)
     .then((supported) => {
       if (!supported) {
-        return "Number is unavailable at this time";
+        Alert.alert(
+          "Calling is Not Possible",
+          "The number is currently unavailable. Try the optional modes provided.",
+          [
+            {
+              text: "OK",
+              style: "cancel",
+            },
+          ]
+        );
       } else {
         return Linking.openURL(phoneNumber);
       }

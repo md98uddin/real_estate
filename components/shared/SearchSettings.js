@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, Dimensions } from "react-native";
 import { Slider, CheckBox, Button } from "react-native-elements";
 import Collapsible from "react-native-collapsible";
 
@@ -46,7 +46,7 @@ const SearchSettings = ({ searchSettings, isCollapsed }) => {
       <CheckBox
         center
         title={
-          <Text style={{ ...styles.textStyle, marginRight: 70 }}>
+          <Text style={{ ...styles.textStyle, marginRight: 100 }}>
             Allow Agents To Contact Me
           </Text>
         }
@@ -59,7 +59,7 @@ const SearchSettings = ({ searchSettings, isCollapsed }) => {
       <CheckBox
         center
         title={
-          <Text style={{ ...styles.textStyle, marginRight: 70 }}>
+          <Text style={{ ...styles.textStyle, marginRight: 100 }}>
             Show Location and Distance
           </Text>
         }
@@ -72,7 +72,7 @@ const SearchSettings = ({ searchSettings, isCollapsed }) => {
       <CheckBox
         center
         title={
-          <Text style={{ ...styles.textStyle, marginRight: 70 }}>
+          <Text style={{ ...styles.textStyle, marginRight: 100 }}>
             Take Me Off Buyer Directory
           </Text>
         }
