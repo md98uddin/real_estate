@@ -90,10 +90,7 @@ const SearchSettings = ({ searchSettings, isCollapsed }) => {
         title="Delete Account"
         buttonStyle={{ backgroundColor: "#f55442", margin: 10 }}
       />
-      <Button
-        title="Sign Out"
-        buttonStyle={{ backgroundColor: "#f5a442", margin: 10 }}
-      />
+      <Button title="Sign Out" buttonStyle={{ margin: 10 }} type="clear" />
     </Collapsible>
   );
 };
