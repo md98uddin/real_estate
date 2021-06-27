@@ -46,7 +46,7 @@ const SearchSettings = ({ searchSettings, isCollapsed }) => {
       <CheckBox
         center
         title={
-          <Text style={{ ...styles.textStyle, marginRight: 100 }}>
+          <Text style={{ ...styles.textStyle, marginRight: 120 }}>
             Allow Agents To Contact Me
           </Text>
         }

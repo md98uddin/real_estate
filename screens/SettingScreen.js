@@ -6,7 +6,7 @@ const SettingScreenStack = createStackNavigator();
 
 const SettingStack = () => {
   return (
-    <SettingScreenStack.Navigator>
+    <SettingScreenStack.Navigator initialRouteName="Setting">
       <SettingScreenStack.Screen name="Setting" component={Setting} />
     </SettingScreenStack.Navigator>
   );

@@ -6,7 +6,7 @@ const ChatScreenStack = createStackNavigator();
 
 const ChatStack = () => {
   return (
-    <ChatScreenStack.Navigator>
+    <ChatScreenStack.Navigator initialRouteName="Chat">
       <ChatScreenStack.Screen name="Chat" component={Chat} />
     </ChatScreenStack.Navigator>
   );

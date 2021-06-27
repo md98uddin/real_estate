@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text, StyleSheet, Dimensions } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import AgentList from "./shared/AgentList";
+import TextModal from "./shared/TextModal";
 
 const AgentScreen = () => {
   const agents = [
@@ -39,14 +39,21 @@ const AgentScreen = () => {
     },
   ];
 
+  const [isModalOpen, setModal] = React.useState(false);
+
+  const toggleTextModal = () => {
+    setModal(!isModalOpen);
+  };
+
   return (
-    <SafeAreaView style={styles.view}>
+    <View style={styles.view}>
       <Text style={styles.headers}>
         {agents.length < 100 ? agents.length : "99+"} Agents Near You
       </Text>
       <View style={styles.viewHorizontal} />
-      <AgentList agents={agents} />
-    </SafeAreaView>
+      <AgentList agents={agents} toggleTextModal={toggleTextModal} />
+      <TextModal toggleTextModal={toggleTextModal} isModalOpen={isModalOpen} />
+    </View>
   );
 };
 
@@ -67,7 +74,7 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   headers: {
-    marginTop: -10,
+    marginTop: 5,
     fontSize: 20,
     marginBottom: 5,
     color: "#0057ad",

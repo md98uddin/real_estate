@@ -5,7 +5,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Entypo from "react-native-vector-icons/Entypo";
 import { callNumber } from "../../utils";
 
-const renderAgents = ({ item }) => {
+const renderAgents = ({ item }, toggleTextModal) => {
   const callHandler = async (phone) => {
     callNumber(phone);
   };
@@ -15,9 +15,9 @@ const renderAgents = ({ item }) => {
         imageSrc={item.image}
         title={`${item.title} \n - ${item.name}`}
         titleStyle={{ fontStyle: "italic", fontSize: 21 }}
-        contentContainerStyle={styles.titleView}
+        contentContainerStyle={styles.tileView}
         titleNumberOfLines={5}
-        containerStyle={styles.titleContainer}
+        containerStyle={styles.tileContainer}
       >
         <View style={styles.view}>
           <FontAwesome
@@ -30,7 +30,7 @@ const renderAgents = ({ item }) => {
             name="chat"
             style={{ width: 25, margin: 5, color: "#0057ad" }}
             size={25}
-            onPress={() => console.log("pressed")}
+            onPress={() => toggleTextModal()}
           />
         </View>
       </Tile>
@@ -38,11 +38,11 @@ const renderAgents = ({ item }) => {
   }
 };
 
-const AgentList = ({ agents }) => {
+const AgentList = ({ agents, toggleTextModal }) => {
   return (
     <FlatList
       data={agents}
-      renderItem={renderAgents}
+      renderItem={(item) => renderAgents(item, toggleTextModal)}
       keyExtractor={(item) => item.id}
       style={{ marginTop: 5 }}
     />
@@ -58,10 +58,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 0,
   },
-  titleContainer: {
+  tileContainer: {
     height: 400,
-    width: Platform.OS !== "android" ? 375 : 400,
-    marginBottom: 25,
+    width: Platform.OS !== "android" ? 360 : 400,
+    marginBottom: 12,
     borderBottomEndRadius: 40,
     borderWidth: 1,
     borderColor: "#0057ad",
