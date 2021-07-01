@@ -6,7 +6,6 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { Button } from "react-native-elements";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import AccountSettings from "./shared/AccountSettings";
 import SearchSettings from "./shared/SearchSettings";

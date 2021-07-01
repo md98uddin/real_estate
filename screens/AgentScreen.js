@@ -6,7 +6,7 @@ const AgentScreenStack = createStackNavigator();
 
 const AgentStack = () => {
   return (
-    <AgentScreenStack.Navigator>
+    <AgentScreenStack.Navigator initialRouteName="Agent">
       <AgentScreenStack.Screen name="Agent" component={Agent} />
     </AgentScreenStack.Navigator>
   );
