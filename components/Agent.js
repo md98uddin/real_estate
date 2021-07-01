@@ -40,10 +40,20 @@ const AgentScreen = () => {
   ];
 
   const [isModalOpen, setModal] = React.useState(false);
+  const [agent, setAgent] = React.useState({
+    name: "Md",
+    id: "1d561651656",
+    image: require("../assets/images/agents/agent-4.jpg"),
+  });
 
-  const toggleTextModal = () => {
+  const toggleTextModal = (name, id, image) => {
+    if (!isModalOpen) {
+      setAgent({ name, id, image });
+    }
     setModal(!isModalOpen);
   };
+
+  console.log(agent);
 
   return (
     <View style={styles.view}>
@@ -52,7 +62,11 @@ const AgentScreen = () => {
       </Text>
       <View style={styles.viewHorizontal} />
       <AgentList agents={agents} toggleTextModal={toggleTextModal} />
-      <TextModal toggleTextModal={toggleTextModal} isModalOpen={isModalOpen} />
+      <TextModal
+        toggleTextModal={toggleTextModal}
+        isModalOpen={isModalOpen}
+        agent={agent}
+      />
     </View>
   );
 };

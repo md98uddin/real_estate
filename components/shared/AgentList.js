@@ -30,7 +30,7 @@ const renderAgents = ({ item }, toggleTextModal) => {
             name="chat"
             style={{ width: 25, margin: 5, color: "#0057ad" }}
             size={25}
-            onPress={() => toggleTextModal()}
+            onPress={() => toggleTextModal(item.name, item.id, item.image)}
           />
         </View>
       </Tile>
