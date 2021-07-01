@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     textAlignVertical: "top",
     borderColor: "#f2f3f5",
     marginTop: 10,
+    elevation: 2,
   },
   buttonContainer: { margin: 5 },
 });

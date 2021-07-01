@@ -1,6 +1,13 @@
 import * as React from "react";
-import { View, FlatList, StyleSheet, Platform } from "react-native";
-import { Tile } from "react-native-elements";
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  Platform,
+  Dimensions,
+} from "react-native";
+import { Tile, Rating } from "react-native-elements";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Entypo from "react-native-vector-icons/Entypo";
 import { callNumber } from "../../utils";
@@ -19,6 +26,20 @@ const renderAgents = ({ item }, toggleTextModal) => {
         titleNumberOfLines={5}
         containerStyle={styles.tileContainer}
       >
+        <View>
+          <Text>{item.company}</Text>
+          <Text>
+            <Rating
+              readonly
+              ratingColor="#0057ad"
+              type="custom"
+              tintColor="white"
+              imageSize={20}
+              startingValue={item.rating}
+              fractions={1}
+            />
+          </Text>
+        </View>
         <View style={styles.view}>
           <FontAwesome
             name="phone"

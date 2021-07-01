@@ -12,6 +12,8 @@ const AgentScreen = () => {
         "Whether it's in the mounted coast, barren plains, let me help you find your next home.",
       image: require("../assets/images/agents/agent-1.jpg"),
       phone: "3478561586",
+      company: "Morgan Realty",
+      rating: 3.5,
     },
     {
       id: "agent-2",
@@ -20,6 +22,8 @@ const AgentScreen = () => {
         "Enjoy life out in a ranch, or at a beach side resort this upcoming summer.",
       image: require("../assets/images/agents/agent-2.jpg"),
       phone: "8451473586",
+      company: "Sunshine Home",
+      rating: 4.5,
     },
     {
       id: "agent-3",
@@ -28,6 +32,8 @@ const AgentScreen = () => {
         "From the east to west coast, we have you covered at the best prices in both ends.",
       image: require("../assets/images/agents/agent-3.jpg"),
       phone: "3475104274",
+      company: "West and East Housing",
+      rating: 4.2,
     },
     {
       id: "agent-4",
@@ -36,6 +42,18 @@ const AgentScreen = () => {
         "Find your dream home with poolside backyard, multifloor AC units, and much more.",
       image: require("../assets/images/agents/agent-4.jpg"),
       phone: "9156895823",
+      company: "Richard's Realty",
+      rating: 4.6,
+    },
+    {
+      id: "agent-5",
+      name: "Josh Goodwin",
+      title:
+        "For some reason, everyone wants a pool. How about I give you that with the best prices in the tri state.",
+      image: require("../assets/images/agents/agent-5.jpg"),
+      phone: "3475874963",
+      company: "Value Housing Realty",
+      rating: 4.2,
     },
   ];
 
