@@ -1,12 +1,5 @@
 import * as React from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  Platform,
-  Dimensions,
-} from "react-native";
+import { View, Text, FlatList, StyleSheet, Platform } from "react-native";
 import { Tile, Rating } from "react-native-elements";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Entypo from "react-native-vector-icons/Entypo";
