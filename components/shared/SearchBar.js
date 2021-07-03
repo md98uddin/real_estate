@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, Dimensions } from "react-native";
+import { View, Text, Dimensions, StyleSheet } from "react-native";
 import { Input } from "react-native-elements";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
@@ -30,6 +30,7 @@ const SearchInput = () => {
         inputContainerStyle={{
           marginTop: 40,
         }}
+        containerStyle={{ borderBottomWidth: 1 }}
       />
     </View>
   );

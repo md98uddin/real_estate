@@ -1,19 +1,37 @@
 import * as React from "react";
-import { View, Text } from "react-native";
-import SearchBar from "./SearchBar";
+import { ScrollView, Text, FlatList, StyleSheet } from "react-native";
+import { Card, Image } from "react-native-elements";
 
-const SearchListing = () => {
+const renderHouses = ({ item }, toggleHouseView) => {
+  if (item) {
+    return (
+      <ScrollView contentContainerStyle={styles.view}>
+        <Card.Image source={item.image} />
+        <Card>
+          <Card.Title>{`${item.name} \n ${item.address}`} </Card.Title>
+          <Card.Divider />
+        </Card>
+      </ScrollView>
+    );
+  }
+};
+
+const SearchListing = ({ houses, toggleHouseView }) => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Search Listings</Text>
-    </View>
+    <FlatList
+      data={houses}
+      renderItem={(item) => renderHouses(item, toggleHouseView)}
+      keyExtractor={(item) => item.id}
+      style={{ marginTop: 5 }}
+    />
   );
 };
 
 export default SearchListing;
+
+const styles = StyleSheet.create({
+  view: {
+    flexDirection: "row",
+    borderWidth: 0,
+  },
+});
