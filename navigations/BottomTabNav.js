@@ -16,7 +16,7 @@ const BottomTab = () => {
         activeTintColor: "black",
       }}
       sceneContainerStyle={{ justifyContent: "center" }}
-      initialRouteName="Agent"
+      initialRouteName="Search"
     >
       <Tab.Screen
         name="Search"
